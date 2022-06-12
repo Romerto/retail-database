@@ -212,9 +212,40 @@ namespace coursach
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
+    
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(button6.Text.Trim() == "В")
+                dataGridView1.Sort(dataGridView1.Columns[comboBox2.SelectedIndex], ListSortDirection.Ascending);
+            if (button6.Text.Trim() == "У")
+                dataGridView1.Sort(dataGridView1.Columns[comboBox2.SelectedIndex], ListSortDirection.Descending);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show(
+                    "Выберите колонку для сортировки",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
+            else
+            {
+                if (button6.Text.Trim() == "В")
+                {
+                    button6.Text = "У";
+                    dataGridView1.Sort(dataGridView1.Columns[comboBox2.SelectedIndex], ListSortDirection.Descending);
+                }
+                else
+                {
+                    button6.Text = "В";
+                    dataGridView1.Sort(dataGridView1.Columns[comboBox2.SelectedIndex], ListSortDirection.Ascending);
+                }
+            }
         }
     }
 }
