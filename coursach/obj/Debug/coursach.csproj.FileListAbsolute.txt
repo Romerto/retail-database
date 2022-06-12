@@ -85,3 +85,33 @@ C:\Users\roman\Desktop\курсач\coursach\coursach\bin\Debug\K4os.Hash.xxHash
 C:\Users\roman\Desktop\курсач\coursach\coursach\bin\Debug\MySql.Data.xml
 C:\Users\roman\Desktop\курсач\coursach\coursach\obj\Debug\coursach.exe.config
 C:\Users\roman\Desktop\курсач\coursach\coursach\obj\Debug\coursach.Stock.resources
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\coursach.exe.config
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\coursach.exe
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\coursach.pdb
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\CircularProgressBar.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\MySql.Data.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\WinFormAnimation.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\Google.Protobuf.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\ZstdNet.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\System.Memory.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\System.Buffers.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\CircularProgressBar.xml
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\bin\Debug\MySql.Data.xml
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.csproj.AssemblyReference.cache
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.csproj.SuggestedBindingRedirects.cache
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.exe.config
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.All.resources
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.MainMenu.resources
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.LoadingScreen.resources
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.Properties.Resources.resources
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.Stock.resources
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.csproj.GenerateResource.cache
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.csproj.CoreCompileInputs.cache
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.csproj.CopyComplete
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.exe
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.pdb
