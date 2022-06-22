@@ -115,3 +115,4 @@ C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\
 C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.csproj.CopyComplete
 C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.exe
 C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.pdb
+C:\Users\roman\Desktop\КПиЯП курсовая\retail-database\coursach\obj\Debug\coursach.Auth.resources

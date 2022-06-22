@@ -20,8 +20,8 @@ namespace coursach
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            All all = new All();
-            all.Show();
+            Auth auth = new Auth();
+            auth.Show();
         }
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)

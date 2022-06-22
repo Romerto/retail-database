@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 13, 2022 at 08:01 PM
+-- Generation Time: Jun 22, 2022 at 03:42 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -40,12 +40,20 @@ CREATE TABLE `retail` (
 --
 
 INSERT INTO `retail` (`id`, `name`, `type`, `price`, `quantity`) VALUES
-(3, 'DR.WEB SECURITY SPACE', 'АНТИВИРУСЫ', 16, 10),
-(6, 'a', 'a', 100, 10),
-(7, 'KASPERSKY', 'ANTIVIRUS', 120, 10),
-(10, 'AYE', 'ANTIVIRUS', 120, 10),
-(11, 'B', 'B', 10, 0),
-(13, 'dsa', 'dsa', 123, 123);
+(3, 'DR.WEB SECURITY SPACE', 'АНТИВИРУС', 16, 10),
+(6, 'WINDOWS 10 PRO', 'ОПЕРАЦИОННАЯ СИС-МА', 100, 10),
+(7, 'KASPERSKY', 'АНТИВИРУС', 120, 0),
+(10, 'AYE', 'ФАЙЛ МЕНЕДЖЕР', 120, 0),
+(11, 'KASPERSKY VIRUS REMOVAL TOOL', 'УТИЛИТА', 9, 10),
+(14, '7ZIP', 'АРХИВАТОР', 123, 100),
+(15, 'WINRAR', 'АРХИВАТОР', 100, 61),
+(16, 'ODIN', 'УТИЛИТА', 10, 30),
+(17, 'DVA', 'ФАЙЛ МЕНЕДЖЕР', 60, 10),
+(18, 'TRI', 'АРХИВАТОР', 60, 17),
+(19, 'MAC OS', 'ОПЕРАЦИОННАЯ СИС-МА', 500, 10),
+(20, 'IOS', 'ОПЕРАЦИОННАЯ СИС-МА', 300, 10),
+(21, 'ANDROID', 'ОПЕРАЦИОННАЯ СИС-МА', 150, 10),
+(22, 'LINUX', 'ОПЕРАЦИОННАЯ СИС-МА', 10, 10);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +73,7 @@ ALTER TABLE `retail`
 -- AUTO_INCREMENT for table `retail`
 --
 ALTER TABLE `retail`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
