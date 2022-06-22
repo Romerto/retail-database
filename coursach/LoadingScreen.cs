@@ -20,7 +20,7 @@ namespace coursach
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.PerformStep();
-            if (progressBar1.Value == 3)
+            if (progressBar1.Value == 100)
             {
                 timer1.Stop();
                 timer2.Start();
