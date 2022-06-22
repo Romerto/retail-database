@@ -108,7 +108,9 @@ namespace coursach
             MessageBox.Show(
                 "ДОБАВЛЕНИЕ. Для того чтобы добавить информаицю о позиции, введите данные в соответствующие поля (КРОМЕ ПОЛЯ ID), затем нажмите кнопку ДОБАВИТЬ." +
                 "\n\nРЕДАКТИРОВАНИЕ. Для того чтобы обновить информацию о позиции, нажмите на нее в таблице, затем введите новые данные в соответствующие поля и нажмите кнопку СОХРАНИТЬ. " +
-                "\n\nУДАЛЕНИЕ. Для того чтобы удалить информацию о позиции, нажмите на нее в таблице, затем нажмите кнопку УДАЛИТЬ.",
+                "\n\nУДАЛЕНИЕ. Для того чтобы удалить информацию о позиции, нажмите на нее в таблице, затем нажмите кнопку УДАЛИТЬ." +
+                "\n\nСОРТИРОВКА. Для того чтобы отсортировать информацию в таблице и выберите параметр для сортировки (по умолчанию ID)." +
+                "\n Для того чтобы изменить порядок сортировки - нажмите на кнопку рядом со списком. В - возрастание | У - убывание.",
                 "Помощь",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
@@ -245,6 +247,52 @@ namespace coursach
                     button6.Text = "В";
                     dataGridView1.Sort(dataGridView1.Columns[comboBox2.SelectedIndex], ListSortDirection.Ascending);
                 }
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM retail WHERE `name` LIKE '%@Name%' ", db.getConnection());
+            command.CommandText = "SELECT* FROM retail WHERE `name` LIKE '%" + textBox3.Text.Trim() + "%';";
+            //command.Parameters.AddWithValue("@Name", textBox3.Text.Trim());
+            db.openConnection();
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+
+            db.closeConnection();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox3.Clear();
+            comboBox2.SelectedIndex = 0;
+            LoadData();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox3.Text.Trim() != "")
+            {
+                DB db = new DB();
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM retail WHERE `name` LIKE '%@Name%' ", db.getConnection());
+                command.CommandText = "SELECT* FROM retail WHERE `name` LIKE '%" + textBox3.Text.Trim() + "%';";
+                //command.Parameters.AddWithValue("@Name", textBox3.Text.Trim());
+                db.openConnection();
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+
+                db.closeConnection();
+            }
+            else
+            {
+                LoadData();
             }
         }
     }
