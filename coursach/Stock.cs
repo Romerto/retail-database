@@ -56,15 +56,13 @@ namespace coursach
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                "ДОБАВЛЕНИЕ. Для того чтобы добавить информаицю о позиции, введите данные в соответствующие поля (КРОМЕ ПОЛЯ ID), затем нажмите кнопку ДОБАВИТЬ." +
-                "\n\nРЕДАКТИРОВАНИЕ. Для того чтобы обновить информацию о позиции, нажмите на нее в таблице, затем введите новые данные в соответствующие поля и нажмите кнопку СОХРАНИТЬ. " +
-                "\n\nУДАЛЕНИЕ. Для того чтобы удалить информацию о позиции, нажмите на нее в таблице, затем нажмите кнопку УДАЛИТЬ." +
+                "ПРОДАЖА. Для того чтобы выполнить продажу, кликните на нужный товар в таблице, затем введите количество товара и нажмите кнопку ПРОДАТЬ." +
                 "\n\nСОРТИРОВКА. Для того чтобы отсортировать информацию в таблице и выберите параметр для сортировки (по умолчанию ID)." +
                 "\n Для того чтобы изменить порядок сортировки - нажмите на кнопку рядом со списком. В - возрастание | У - убывание.",
                 "Помощь",
@@ -73,14 +71,14 @@ namespace coursach
                 );
         }
 
-       
+
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if((Convert.ToInt32(label10.Text) - Convert.ToInt32(textBox5.Text.Trim()) < 0))
+            if (label7.Text == "" || label8.Text == "" || label9.Text == "" || label10.Text == "")
             {
                 MessageBox.Show(
-                    "Недостаточно товара для продажи введенного количества",
+                    "Выберите товар для продажи",
                     "Ошибка",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
@@ -88,15 +86,10 @@ namespace coursach
             }
             else
             {
-                DB db = new DB();
-                DataTable table = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                MySqlCommand command = new MySqlCommand("UPDATE `retail` SET `quantity` = @Quantity WHERE `id` = @ID", db.getConnection());
-
-                if (label7.Text == "" || label8.Text == "" || label9.Text == "" || label10.Text == "")
+                if ((Convert.ToInt32(label10.Text) - Convert.ToInt32(numericUpDown1.Value) < 0))
                 {
                     MessageBox.Show(
-                        "Выберите товар для продажи",
+                        "Недостаточно товара для продажи введенного количества",
                         "Ошибка",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error
@@ -104,8 +97,15 @@ namespace coursach
                 }
                 else
                 {
+                    DB db = new DB();
+                    DataTable table = new DataTable();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    MySqlCommand command = new MySqlCommand("UPDATE `retail` SET `quantity` = @Quantity WHERE `id` = @ID", db.getConnection());
+
+
+
                     command.Parameters.Add("@ID", MySqlDbType.Int32).Value = label6.Text;
-                    command.Parameters.AddWithValue("@Quantity", Convert.ToInt32(label10.Text) - Convert.ToInt32(textBox5.Text.Trim()));
+                    command.Parameters.AddWithValue("@Quantity", Convert.ToInt32(label10.Text) - Convert.ToInt32(numericUpDown1.Value));
                     db.openConnection();
                     adapter.SelectCommand = command;
                     adapter.Fill(table);
@@ -113,12 +113,19 @@ namespace coursach
                     if (command.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show(
-                            "Успешно продано",
+                           "Сумма: " + numericUpDown1.Value * Convert.ToInt32(label9.Text) + ".",
+                           "Подытог",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Information
+                           );
+                        MessageBox.Show(
+                            "Успешно продано.",
                             "Успех",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information
                             );
-                        textBox5.Text = "0";
+                        numericUpDown1.Value = 0;
+                        button8.PerformClick();
                         LoadData();
                     }
                     else
@@ -130,28 +137,15 @@ namespace coursach
                             MessageBoxIcon.Error
                             );
                     }
+                    LoadData();
+                    db.closeConnection();
                 }
-                LoadData();
-                db.closeConnection();
             }
-            
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void label10_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
 
-        private void label9_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-            
-        }
+        
 
 
 
@@ -189,13 +183,15 @@ namespace coursach
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-           
-        }
+  
 
         private void button8_Click(object sender, EventArgs e)
         {
+            label6.Text = "";
+            label7.Text = "";
+            label8.Text = "";
+            label9.Text = "";
+            label10.Text = "";
             textBox3.Clear();
             comboBox2.SelectedIndex = 0;
             LoadData();
@@ -221,6 +217,14 @@ namespace coursach
             else
             {
                 LoadData();
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+            {
+                e.Handled = true;
             }
         }
     }
